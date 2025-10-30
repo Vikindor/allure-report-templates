@@ -1,5 +1,5 @@
 <h1 align="center">
-Allure Report — HTTP Templates
+Allure Report - HTTP Templates
 </h1>
 
 Minimal, dependency-free FreeMarker templates (`request.ftl`, `response.ftl`) for clean, consistent HTTP attachments in **Allure Report**.  
