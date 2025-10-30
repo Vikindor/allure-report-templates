@@ -2,7 +2,7 @@
 Allure Report — HTTP Templates
 </h1>
 
-Minimal, dependency-free Freemarker templates (`request.ftl`, `response.ftl`) for clean, consistent HTTP attachments in **Allure Report**.  
+Minimal, dependency-free FreeMarker templates (`request.ftl`, `response.ftl`) for clean, consistent HTTP attachments in **Allure Report**.  
 Designed to blend seamlessly into the Allure UI, with structured blocks and safe HTML escaping.
 
 ## ✨ Features
