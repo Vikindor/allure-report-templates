@@ -1,5 +1,5 @@
 <h1 align="center">
-Allure Report — HTTP Templates (Request & Response)
+Allure Report — HTTP Templates
 </h1>
 
 Minimal, dependency-free Freemarker templates (`request.ftl`, `response.ftl`) for clean, consistent HTTP attachments in **Allure Report**.  
@@ -22,14 +22,22 @@ Designed to blend seamlessly into the Allure UI, with structured blocks and safe
 
 ## 📦 Files
 
-[request.ftl](./request.ftl)
-[response.ftl](./response.ftl)
+- [request.ftl](./request.ftl)
+- [response.ftl](./response.ftl)
 
 Both templates share the same CSS variables, ensuring a consistent look and feel.
 
 ## 🚀 Installation
 
-1. Copy the two `.ftl` files into your project resources:
+1. Add dependency (required for the AllureRestAssured listener, not for the templates):
+
+```gradle
+dependencies {
+    testImplementation("io.qameta.allure:allure-rest-assured:2.30.0")
+}
+```
+
+2. Copy the two `.ftl` files into `tpl` package in your project resources:
 
    ```text
    src/
@@ -40,7 +48,7 @@ Both templates share the same CSS variables, ensuring a consistent look and feel
            response.ftl
    ```
 
-2. Create a listener class in your `helpers` package:
+3. Create a listener class in your `helpers` package:
    
    ```java
    package <your.project>.helpers;
@@ -58,7 +66,7 @@ Both templates share the same CSS variables, ensuring a consistent look and feel
    }
    ```
 
-3. Add `.filter(withCustomTemplate())` to your specs:
+4. Add `.filter(withCustomTemplate())` to your specs:
    
    ```java
       public static RequestSpecification requestWithApiKey(String baseLink, String apiKeyName, String apiKeyValue) {
