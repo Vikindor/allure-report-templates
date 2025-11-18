@@ -12,7 +12,8 @@ Designed to blend seamlessly into the Allure UI, with structured blocks and safe
 - Safe rendering (`?html`) to prevent layout breaks from raw payloads.
 - Unified spacing, rounded corners, and light/dark-friendly colors.
 - Monospace font stack for code, configurable via CSS variables.
-- Optional iframe autoresize (remove the `<script>` block to disable it).
+- Both templates share the same CSS variables, ensuring a consistent look and feel.
+- Optional iframe autoresize (delete the `<script>` block to disable it).
 
 ## 🖼 Screenshot
 
@@ -24,8 +25,6 @@ Designed to blend seamlessly into the Allure UI, with structured blocks and safe
 
 - [request.ftl](./request.ftl)
 - [response.ftl](./response.ftl)
-
-Both templates share the same CSS variables, ensuring a consistent look and feel.
 
 ## 🚀 Installation
 
@@ -69,13 +68,12 @@ dependencies {
 4. Add `.filter(withCustomTemplate())` to your specs:
    
    ```java
-      public static RequestSpecification requestWithApiKey(String baseLink, String apiKeyName, String apiKeyValue) {
+      public static RequestSpecification requestWithApiKey(String apiKeyName, String apiKeyValue) {
        return with()
                .filter(withCustomTemplate())
                .log().uri()
                .log().body()
-               .log().headers()
-               .baseUri(baseLink)
+               .log().headers()               
                .accept(JSON)
                .contentType(JSON)
                .header(apiKeyName, apiKeyValue);
