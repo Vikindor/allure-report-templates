@@ -71,7 +71,7 @@ dependencies {
    public static RequestSpecification requestSpec() {
        return with()
            .filter(withCustomTemplate())
-		       .log().uri()
+               .log().uri()
                .log().body()
                .log().headers()
                .contentType(JSON);
