@@ -68,14 +68,12 @@ dependencies {
 4. Add `.filter(withCustomTemplate())` to your specs:
    
    ```java
-      public static RequestSpecification requestWithApiKey(String apiKeyName, String apiKeyValue) {
+   public static RequestSpecification requestSpec() {
        return with()
-               .filter(withCustomTemplate())
-               .log().uri()
+           .filter(withCustomTemplate())
+		       .log().uri()
                .log().body()
-               .log().headers()               
-               .accept(JSON)
-               .contentType(JSON)
-               .header(apiKeyName, apiKeyValue);
+               .log().headers()
+               .contentType(JSON);
    }
    ```
